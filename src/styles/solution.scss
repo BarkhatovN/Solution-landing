@@ -23,3 +23,55 @@
     padding: 14px 32px;
   }
 }
+
+.solution-section-title {
+  position: relative;
+  display: inline-block;
+  font-size: font-sizes.$font-64;
+  font-weight: 600;
+  padding: 0 81px;
+
+  @include breakpoints.sm-down {
+    font-size: font-sizes.$font-32;
+    padding: 0 70px;
+  }
+
+  &:before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 39px;
+    height: 100%;
+    margin-top: -4px;
+
+    background-image: url("/assets/icons/title-prefix.png");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include breakpoints.sm-down {
+      margin-top: -1px;
+    }
+  }
+
+  &:before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+}
+
+.solution-section-description {
+  font-size: font-sizes.$font-32;
+  line-height: 1.35;
+  text-align: center;
+  margin: 42px 0;
+  max-width: 1128px;
+
+  @include breakpoints.sm-down {
+    font-size: font-sizes.$font-16;
+    margin: 26px 0;
+  }
+}

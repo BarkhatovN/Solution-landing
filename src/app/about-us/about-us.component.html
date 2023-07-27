@@ -1,3 +1,9 @@
 <div class="container">
-  <solution-carousel [imageUrls]="imageUrls"></solution-carousel>
+  <h2 class="solution-section-title">{{ "ABOUT_US.TITLE" | translate }}</h2>
+  <p class="solution-section-description">
+    {{ "ABOUT_US.DESCRIPTION" | translate }}
+  </p>
+  <div class="carousel-container">
+    <solution-carousel [imageUrls]="imageUrls"></solution-carousel>
+  </div>
 </div>
