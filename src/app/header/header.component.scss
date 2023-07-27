@@ -1,0 +1,58 @@
+@use "colors";
+@use "breakpoints";
+
+:host {
+  display: block;
+  height: 87px;
+  border-bottom: 3px solid colors.$gold;
+
+  color: colors.$gold;
+  background-color: colors.$black;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  .logo {
+    @include breakpoints.xs-down {
+      width: 40px;
+    }
+  }
+
+  .contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding-left: 115px;
+
+    @include breakpoints.xs-down {
+      padding-left: 0;
+      gap: 8px;
+    }
+
+    & > a {
+      width: 30px;
+    }
+  }
+
+  .phone-lang {
+    display: flex;
+    gap: 10px;
+
+    .phone-max {
+      @include breakpoints.xs-down {
+        display: none;
+      }
+    }
+    .phone-min {
+      display: none;
+      @include breakpoints.xs-down {
+        display: inline-block;
+      }
+    }
+  }
+}

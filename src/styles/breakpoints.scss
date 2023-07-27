@@ -1,0 +1,6 @@
+@mixin xs-down {
+  // 576
+  @media (max-width: 576px) {
+    @content;
+  }
+}
