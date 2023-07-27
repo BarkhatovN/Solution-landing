@@ -1,0 +1,11 @@
+@use "breakpoints";
+
+:host {
+  display: block;
+}
+
+.container {
+  @include breakpoints.xs-down {
+    padding: 0 50px;
+  }
+}

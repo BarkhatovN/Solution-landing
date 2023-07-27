@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,19 +8,29 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { register as swiperRegister } from 'swiper/element/bundle';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Lang } from './share/models/lang';
 import { BrandTitleComponent } from './brand-title/brand-title.component';
+import { CarouselComponent } from './share/components/carousel/carousel.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, BrandTitleComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    BrandTitleComponent,
+    CarouselComponent,
+    AboutUsComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -32,15 +42,15 @@ export function createTranslateLoader(http: HttpClient) {
       },
     }),
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor(translate: TranslateService) {
-    // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang(Lang.EN);
-
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use(Lang.EN);
+
+    swiperRegister();
   }
 }

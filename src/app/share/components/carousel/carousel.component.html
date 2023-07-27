@@ -1,0 +1,20 @@
+<swiper-container
+  *ngIf="imageUrls.length"
+  #swiper
+  slides-per-view="1"
+  [breakpoints]="breakpoints"
+  speed="500"
+  loop="true"
+  css-mode="true"
+>
+  <swiper-slide *ngFor="let url of imageUrls; index as i">
+    <img [src]="url" [alt]="'carousel image' + i" class="title-text-img"
+  /></swiper-slide>
+</swiper-container>
+
+<button class="control-btn next" (click)="next()">
+  <img src="assets/icons/arrow.svg" alt="arrow next" />
+</button>
+<button class="control-btn prev" (click)="prev()">
+  <img src="assets/icons/arrow.svg" alt="arrow prev" />
+</button>

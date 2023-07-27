@@ -1,6 +1,24 @@
+$xs-breakpoint: 576px;
+$sm-breakpoint: 768px;
+$lg-breakpoint: 992px;
+
 @mixin xs-down {
   // 576
-  @media (max-width: 576px) {
+  @media (max-width: $xs-breakpoint) {
+    @content;
+  }
+}
+
+@mixin sm-down {
+  // 768
+  @media (max-width: $sm-breakpoint) {
+    @content;
+  }
+}
+
+@mixin lg-down {
+  // 992
+  @media (max-width: $lg-breakpoint) {
     @content;
   }
 }

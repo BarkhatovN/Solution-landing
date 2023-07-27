@@ -1,12 +1,16 @@
 @use "colors";
+@use "breakpoints";
 @import "solution";
 
 body {
   margin: 0;
   color: colors.$white;
-  box-sizing: border-box;
-
+  background-color: colors.$black;
   font-family: "Comfortaa", arial;
+
+  * {
+    box-sizing: border-box !important;
+  }
 }
 
 a {
@@ -25,7 +29,15 @@ button {
 }
 
 .container {
-  max-width: 1392px;
-  padding: 0 20px;
+  max-width: calc(1392px + 100px * 2);
+  padding: 0 100px;
   margin: 0 auto;
+
+  @include breakpoints.sm-down {
+    padding: 0 50px;
+  }
+
+  @include breakpoints.xs-down {
+    padding: 0 20px;
+  }
 }
