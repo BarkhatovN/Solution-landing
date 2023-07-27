@@ -12,6 +12,8 @@
 
   <div class="phone-lang">
     <a class="phone-max" href="tel:995-999-999-999">+ 995 999 999 999</a>
-    <a (click)="toggleLang()">EN</a>
+    <a class="lang-btn" (click)="toggleLang()">{{
+      langButtonText | uppercase
+    }}</a>
   </div>
 </div>
