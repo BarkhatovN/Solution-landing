@@ -1,0 +1,27 @@
+@use "colors";
+@use "breakpoints";
+
+:host {
+  display: block;
+  height: 87px;
+  border-top: 3px solid colors.$gold;
+
+  color: colors.$gold;
+  background-color: colors.$black;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 25px;
+
+  @include breakpoints.xs-down {
+    gap: 8px;
+  }
+
+  & > a {
+    width: 30px;
+  }
+}
