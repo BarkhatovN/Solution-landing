@@ -1,7 +1,9 @@
-@import "colors";
+@use "colors";
+@import "solution";
 
 body {
   margin: 0;
+  color: colors.$white;
   box-sizing: border-box;
 
   font-family: "Comfortaa", arial;
@@ -11,6 +13,14 @@ a {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background-color: unset;
+  color: inherit;
+  font-family: inherit;
 }
 
 .container {

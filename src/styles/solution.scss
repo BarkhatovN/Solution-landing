@@ -1,0 +1,15 @@
+@use "colors";
+@use "font-sizes";
+@use "breakpoints";
+
+.solution-btn {
+  padding: 18px 32px;
+  font-size: font-sizes.$font-18;
+  border-radius: 32px;
+  border: 2px solid colors.$gold;
+
+  @include breakpoints.xs-down {
+    font-size: font-sizes.$font-14;
+    padding: 14px 32px;
+  }
+}

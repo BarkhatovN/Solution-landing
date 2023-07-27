@@ -13,13 +13,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Lang } from './share/models/lang';
+import { BrandTitleComponent } from './brand-title/brand-title.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, BrandTitleComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

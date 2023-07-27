@@ -1,3 +1,6 @@
 {
-  "TEST": "test"
+  "BUTTON": {
+    "RESERVE": "Reserve",
+    "PRICE_LIST": "Price list"
+  }
 }
