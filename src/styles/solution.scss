@@ -7,6 +7,16 @@
   font-size: font-sizes.$font-18;
   border-radius: 32px;
   border: 2px solid colors.$gold;
+  background-color: colors.$black;
+
+  &:hover {
+    background-color: colors.$gold;
+    color: colors.$black;
+    font-weight: 600;
+  }
+  &:active {
+    background-color: #916734;
+  }
 
   @include breakpoints.xs-down {
     font-size: font-sizes.$font-14;
