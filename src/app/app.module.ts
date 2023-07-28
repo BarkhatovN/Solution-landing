@@ -51,7 +51,15 @@ export function createTranslateLoader(http: HttpClient) {
 export class AppModule {
   constructor(translate: TranslateService) {
     translate.setDefaultLang(Lang.EN);
-    translate.use(Lang.EN);
+
+    const storedLang = localStorage.getItem('lang');
+    const userLang = storedLang
+      ? storedLang
+      : navigator.language === 'ru-RU'
+      ? Lang.RU
+      : Lang.EN;
+
+    translate.use(userLang);
 
     swiperRegister();
   }

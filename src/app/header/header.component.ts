@@ -22,6 +22,7 @@ export class HeaderComponent {
 
   toggleLang(): void {
     this.translateService.use(this.langButtonText);
+    localStorage.setItem('lang', this.langButtonText);
     this.langButtonText = this.langButtonText === Lang.EN ? Lang.RU : Lang.EN;
   }
 }
