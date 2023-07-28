@@ -9,5 +9,10 @@
   },
   "COCTAILS": {
     "TITLE": "COCTAILS"
+  },
+  "HOOKAHS": {
+    "TITLE": "HOOKAHS",
+    "ITEM1": "Standard hookah",
+    "ITEM2": "Grapefruit/orange hookah"
   }
 }

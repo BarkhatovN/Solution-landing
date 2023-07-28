@@ -1,0 +1,11 @@
+<div class="container">
+  <h2 class="solution-section-title">{{ "HOOKAHS.TITLE" | translate }}</h2>
+  <div class="hookahs">
+    <div class="item-container" *ngFor="let hookah of hookahs">
+      <div class="item">
+        <div class="name">{{ hookah.name | translate }}</div>
+        <div class="price">{{ hookah.price }}</div>
+      </div>
+    </div>
+  </div>
+</div>
