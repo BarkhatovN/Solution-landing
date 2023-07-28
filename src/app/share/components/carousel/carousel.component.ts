@@ -18,15 +18,16 @@ import { SwiperOptions } from 'swiper/types';
 export class CarouselComponent {
   @Input() imageUrls: string[] = [];
 
-  @ViewChild('swiper') swiperRef?: ElementRef<{ swiper: Swiper }>;
-
-  readonly breakpoints: {
+  @Input() breakpoints: {
     [width: number]: SwiperOptions;
     [ratio: string]: SwiperOptions;
   } = {
+    0: { slidesPerView: 1 },
     576: { slidesPerView: 2 },
     992: { slidesPerView: 3 },
   };
+
+  @ViewChild('swiper') swiperRef?: ElementRef<{ swiper: Swiper }>;
 
   next() {
     this.swiperRef?.nativeElement.swiper.slideNext();

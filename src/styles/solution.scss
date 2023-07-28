@@ -67,11 +67,11 @@
   font-size: font-sizes.$font-32;
   line-height: 1.35;
   text-align: center;
-  margin: 42px 0;
+  margin: 42px 0 0 0;
   max-width: 1128px;
 
   @include breakpoints.sm-down {
     font-size: font-sizes.$font-16;
-    margin: 26px 0;
+    margin: 26px 0 0 0;
   }
 }

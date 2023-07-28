@@ -17,6 +17,7 @@ import { Lang } from './share/models/lang';
 import { BrandTitleComponent } from './brand-title/brand-title.component';
 import { CarouselComponent } from './share/components/carousel/carousel.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CoctailsComponent } from './coctails/coctails.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,6 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrandTitleComponent,
     CarouselComponent,
     AboutUsComponent,
+    CoctailsComponent,
   ],
   imports: [
     BrowserModule,

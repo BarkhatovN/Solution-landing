@@ -6,5 +6,8 @@
   "ABOUT_US": {
     "TITLE": "ABOUT US",
     "DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus quam semper, fermentum urna ac, vehicula lacus. Fusce pellentesque vitae nulla commodo lacinia."
+  },
+  "COCTAILS": {
+    "TITLE": "COCTAILS"
   }
 }

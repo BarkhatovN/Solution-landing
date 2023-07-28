@@ -3,16 +3,18 @@
 :host {
   position: relative;
   display: block;
+
+  margin-top: 42px;
+
+  @include breakpoints.sm-down {
+    margin-top: 26px;
+  }
 }
 
 swiper-slide {
   overflow: hidden;
   margin: 12px;
-  height: 610px;
-
-  @include breakpoints.sm-down {
-    height: 308px;
-  }
+  height: 308px;
 
   img {
     width: 100%;
