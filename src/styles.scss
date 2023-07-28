@@ -8,6 +8,38 @@ body {
   background-color: colors.$black;
   font-family: "Comfortaa", arial;
 
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: colors.$gold colors.$black;
+  }
+
+  &::-webkit-scrollbar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    &:vertical {
+      width: 8px;
+    }
+
+    &:horizontal {
+      height: 8px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    &:vertical,
+    &:horizontal {
+      background-color: colors.$gold;
+      border-radius: 10px;
+    }
+  }
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-track-piece {
+    background-color: colors.$black;
+  }
+
   * {
     box-sizing: border-box !important;
   }
