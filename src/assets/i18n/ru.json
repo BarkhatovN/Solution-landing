@@ -1,4 +1,7 @@
 {
+  "CONTACTS": {
+    "WHATSAPP_HELLO_TEXT": "Привет, я хочу забронировать столик!"
+  },
   "BUTTON": {
     "RESERVE": "Забронировать",
     "PRICE_LIST": "Прайс-лист"

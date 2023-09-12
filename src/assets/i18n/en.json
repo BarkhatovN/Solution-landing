@@ -1,4 +1,7 @@
 {
+  "CONTACTS": {
+    "WHATSAPP_HELLO_TEXT": "Hi, I want to book a table!"
+  },
   "BUTTON": {
     "RESERVE": "Reserve",
     "PRICE_LIST": "Price list"
