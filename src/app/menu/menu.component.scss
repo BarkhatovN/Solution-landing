@@ -1,0 +1,33 @@
+@use "breakpoints";
+
+:host {
+  display: block;
+  padding-top: 172px;
+
+  @include breakpoints.sm-down {
+    padding-top: 100px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-container {
+  display: block;
+  width: 100%;
+
+  @include breakpoints.xs-down {
+    padding: 0 30px;
+  }
+
+  solution-carousel ::ng-deep swiper-slide {
+    height: 610px;
+
+    @include breakpoints.sm-down {
+      height: 308px;
+    }
+  }
+}

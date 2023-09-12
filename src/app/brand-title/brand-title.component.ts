@@ -7,5 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BrandTitleComponent {
-
+  scrollTo(anchorId: string): void {
+    document.getElementById(anchorId)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
