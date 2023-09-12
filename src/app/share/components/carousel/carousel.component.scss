@@ -13,7 +13,7 @@
 
 swiper-slide {
   overflow: hidden;
-  margin: 12px;
+  // margin: 12px;
   height: 308px;
 
   img {
@@ -21,6 +21,7 @@ swiper-slide {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    margin: 0 24px;
   }
 }
 
@@ -47,4 +48,8 @@ swiper-slide {
     right: 0;
     transform: translate(100%, -50%);
   }
+}
+
+::ng-deep .swiper-lazy-preloader {
+  display: none !important;
 }

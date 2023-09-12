@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -15,19 +16,29 @@ import { SwiperOptions } from 'swiper/types';
   styleUrls: ['./carousel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CarouselComponent {
+export class CarouselComponent implements AfterViewInit {
   @Input() imageUrls: string[] = [];
 
   @Input() breakpoints: {
     [width: number]: SwiperOptions;
     [ratio: string]: SwiperOptions;
   } = {
-    0: { slidesPerView: 1 },
-    576: { slidesPerView: 2 },
-    992: { slidesPerView: 3 },
-  };
+      0: { slidesPerView: 1 },
+        576: { slidesPerView: 2 },
+      992: { slidesPerView: 3 },
+    };
 
-  @ViewChild('swiper') swiperRef?: ElementRef<{ swiper: Swiper }>;
+  @ViewChild('swiper') swiperRef?: ElementRef<{ swiper: Swiper, initialize: () => void }>;
+
+  ngAfterViewInit(): void {
+    const swiperParams = {
+      lazyPreloadPrevNext: 1
+    };
+
+    Object.assign(this.swiperRef!.nativeElement, swiperParams);
+
+    this.swiperRef!.nativeElement.initialize();
+  }
 
   next() {
     this.swiperRef?.nativeElement.swiper.slideNext();
