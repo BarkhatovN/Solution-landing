@@ -31,8 +31,9 @@ export class CarouselComponent implements AfterViewInit {
   @ViewChild('swiper') swiperRef?: ElementRef<{ swiper: Swiper, initialize: () => void }>;
 
   ngAfterViewInit(): void {
-    const swiperParams = {
-      lazyPreloadPrevNext: 1
+    const swiperParams: SwiperOptions = {
+      lazyPreloadPrevNext: 1,
+      spaceBetween: 28
     };
 
     Object.assign(this.swiperRef!.nativeElement, swiperParams);

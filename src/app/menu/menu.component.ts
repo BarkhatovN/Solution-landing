@@ -20,7 +20,7 @@ export class MenuComponent {
     [ratio: string]: SwiperOptions;
   } = {
     0: { slidesPerView: 1 },
-    576: { slidesPerView: 2 },
-    992: { slidesPerView: 3 },
+    900: { slidesPerView: 2 },
+    1200: { slidesPerView: 3 },
   };
 }
