@@ -1,0 +1,31 @@
+<ng-container *ngIf="{
+  requestSent: requestSentSubject | async,
+  loading: loadingSubject | async,
+} as sync">
+  <div class="container text-block">
+    <h3 class="solution-section-subtitle">{{ 'BOOKING.TITLE' | translate }}</h3>
+    <p class="description">
+      <a href="tel:995-591-062-514" class="solution-link">{{ 'BOOKING.CALL_ME' | translate }}</a> {{ 'BOOKING.DESCRIPTION' | translate }}
+    </p>
+  </div>
+  <form [formGroup]="form" class="container" [class.loading]="sync.loading" *ngIf="!sync.requestSent; else tmplAlreadySent">
+    <div class="form-field">
+      <label for="name">{{ 'BOOKING.NAME' | translate }}</label>
+      <input id="name" type="text" formControlName="name" [placeholder]="'BOOKING.NAME_PLACEHOLDER' | translate">
+      <div class="control-error" [class.show]="form.controls.name.invalid && form.controls.name.touched">{{ 'ERRORS.REQUIRED' | translate }}</div>
+    </div>
+
+    <div class="form-field">
+      <label for="phone">{{ 'BOOKING.PHONE' | translate }}</label>
+      <input id="phone" type="text" formControlName="phone" prefix="+995" mask=" 000-000-000" placeholder="+995 999 999 999">
+      <div class="control-error" [class.show]="form.controls.phone.invalid && form.controls.phone.touched">{{ ( form.controls.phone.hasError('required') ? 'ERRORS.REQUIRED' : 'ERRORS.PHONE' ) | translate }}</div>
+    </div>
+
+    <button type="button" class="solution-btn" [disabled]="form.invalid || sync.loading" (click)="submit()">{{ 'BOOKING.BUTTON' | translate }}</button>
+  </form>
+</ng-container>
+
+
+<ng-template #tmplAlreadySent>
+  <p class="container already-sent">{{ 'BOOKING.ALREADY_SENT' | translate }}</p>
+</ng-template>

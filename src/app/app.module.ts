@@ -24,6 +24,9 @@ import { MenuComponent } from './menu/menu.component';
 import { AngularYandexMapsModule, YaConfig } from 'angular8-yandex-maps';
 import { YandexMapComponent } from './yandex-map/yandex-map.component';
 import { ReplaySubject, map, startWith } from 'rxjs';
+import { BookTableComponent } from './book-table/book-table.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,11 +45,13 @@ export const mapConfigSubject = new ReplaySubject<YaConfig>(1);
     CoctailsComponent,
     HookahsComponent,
     MenuComponent,
-    YandexMapComponent
+    YandexMapComponent,
+    BookTableComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -54,10 +59,12 @@ export const mapConfigSubject = new ReplaySubject<YaConfig>(1);
         deps: [HttpClient],
       },
     }),
-    AngularYandexMapsModule.forRoot(mapConfigSubject)
+    AngularYandexMapsModule.forRoot(mapConfigSubject),
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {

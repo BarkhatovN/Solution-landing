@@ -1,5 +1,6 @@
 @use "colors";
 @use "breakpoints";
+@use "font-sizes";
 @import "solution";
 
 body {
@@ -66,7 +67,66 @@ button {
   color: inherit;
   font-family: inherit;
   cursor: pointer;
+
+  &[disabled] {
+    cursor: default;
+    pointer-events: none;
+    background-color: #dcdcdc;
+    border-color: transparent;
+    color: #00000061;
+  }
 }
+
+input {
+  border: none;
+  background: transparent;
+  font-size: font-sizes.$font-28;
+  line-height: 1.6;
+  color: colors.$white;
+
+  border-bottom: 2px solid colors.$gold;
+  margin-bottom: 26px;
+
+  @include breakpoints.xs-down {
+    font-size: font-sizes.$font-16;
+  }
+
+  &.ng-touched.ng-invalid {
+    border-color: colors.$error;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.control-error {
+  opacity: 0;
+  color: colors.$error;
+  margin-top: -18px;
+  transform: translateY(-10px);
+
+  transition: opacity 0.1s cubic-bezier(0.29, 1.13, 1, 1), transform 0.1s cubic-bezier(0.29, 1.13, 1, 1);
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @include breakpoints.xs-down {
+    font-size: font-sizes.$font-14;
+  }
+}
+
+label {
+  font-size: font-sizes.$font-28;
+  line-height: 1.6;
+
+  @include breakpoints.xs-down {
+    font-size: font-sizes.$font-16;
+  }
+}
+
 
 .container {
   max-width: calc(1392px + 100px * 2);

@@ -22,5 +22,19 @@
   },
   "MENU": {
     "TITLE": "MENU"
+  },
+  "BOOKING": {
+    "TITLE": "Reserve a table",
+    "CALL_ME": "Call us",
+    "DESCRIPTION": "or leave a request, we will call you back",
+    "NAME": "Name",
+    "PHONE": "Phone",
+    "NAME_PLACEHOLDER": "John",
+    "BUTTON": "Send a request",
+    "ALREADY_SENT": "Thank you, request has been sent. We will call you back soon"
+  },
+  "ERRORS": {
+    "REQUIRED": "Field is required",
+    "PHONE": "Phone number is incorrect"
   }
 }

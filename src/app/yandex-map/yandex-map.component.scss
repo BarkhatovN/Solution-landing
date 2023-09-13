@@ -4,13 +4,17 @@
 
 :host {
   display: block;
-  padding-top: 172px;
+  padding-top: 120px;
 
   @include breakpoints.sm-down {
-    padding-top: 100px;
+    padding-top: 70px;
   }
 }
 
+.container.map-container {
+  padding: 0 !important;
+  max-width: 1392px;
+}
 
 .address-container {
   display: flex;

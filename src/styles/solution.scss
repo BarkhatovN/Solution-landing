@@ -8,11 +8,12 @@
   border-radius: 32px;
   border: 2px solid colors.$gold;
   background-color: colors.$black;
+  font-weight: bold;
 
   &:hover {
     background-color: colors.$gold;
     color: colors.$black;
-    font-weight: 600;
+    font-weight: bold;
   }
   &:active {
     background-color: #916734;
@@ -24,11 +25,20 @@
   }
 }
 
+.solution-link {
+  color: colors.$gold;
+  text-decoration: underline;
+
+  &:hover {
+    color: colors.$green;
+  }
+}
+
 .solution-section-title {
   position: relative;
   display: inline-block;
   font-size: font-sizes.$font-64;
-  font-weight: 600;
+  font-weight: bold;
   padding: 0 81px;
 
   @include breakpoints.sm-down {
@@ -60,6 +70,16 @@
   }
   &::after {
     right: 0;
+  }
+}
+
+.solution-section-subtitle {
+  font-size: font-sizes.$font-48;
+  font-weight: bold;
+
+  @include breakpoints.xs-down {
+    font-size: font-sizes.$font-28;
+    line-height: 1.4;
   }
 }
 
