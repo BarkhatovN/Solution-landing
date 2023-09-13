@@ -22,10 +22,4 @@
   @include breakpoints.xs-down {
     padding: 0 30px;
   }
-
-  solution-carousel ::ng-deep swiper-slide {
-    @include breakpoints.sm-down {
-      height: 230px;
-    }
-  }
 }

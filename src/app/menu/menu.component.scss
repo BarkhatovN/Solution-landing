@@ -24,18 +24,6 @@
   }
 
   solution-carousel ::ng-deep swiper-slide {
-    height: 676px;
-
-    @media (max-width: 900px) {
-      height: 740px;
-    }
-
-    @include breakpoints.sm-down {
-      height: 684px;
-    }
-
-    @media (max-width: 450px) {
-      height: 358px;
-    }
+    height: auto !important;
   }
 }
