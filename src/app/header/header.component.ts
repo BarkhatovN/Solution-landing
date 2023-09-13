@@ -25,4 +25,8 @@ export class HeaderComponent {
     localStorage.setItem('lang', this.langButtonText);
     this.langButtonText = this.langButtonText === Lang.EN ? Lang.RU : Lang.EN;
   }
+
+  scrollTo(anchorId: string): void {
+    document.getElementById(anchorId)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

@@ -1,6 +1,8 @@
 {
+  "TITLE": "Lounge Bar Solution Heritage",
   "CONTACTS": {
-    "WHATSAPP_HELLO_TEXT": "Привет, я хочу забронировать столик!"
+    "WHATSAPP_HELLO_TEXT": "Привет, я хочу забронировать столик!",
+    "ADDRESS": "Тбилиси, улица Георгия Ахвледиани, 12, этаж 2"
   },
   "BUTTON": {
     "RESERVE": "Забронировать",

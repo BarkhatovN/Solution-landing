@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import {
+  LangChangeEvent,
   TranslateLoader,
   TranslateModule,
   TranslateService,
@@ -20,10 +21,15 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { CoctailsComponent } from './coctails/coctails.component';
 import { HookahsComponent } from './hookahs/hookahs.component';
 import { MenuComponent } from './menu/menu.component';
+import { AngularYandexMapsModule, YaConfig } from 'angular8-yandex-maps';
+import { YandexMapComponent } from './yandex-map/yandex-map.component';
+import { ReplaySubject, map, startWith } from 'rxjs';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+export const mapConfigSubject = new ReplaySubject<YaConfig>(1);
 
 @NgModule({
   declarations: [
@@ -36,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     CoctailsComponent,
     HookahsComponent,
     MenuComponent,
+    YandexMapComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +54,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    AngularYandexMapsModule.forRoot(mapConfigSubject)
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
@@ -66,5 +74,15 @@ export class AppModule {
     translate.use(userLang);
 
     swiperRegister();
+
+    translate.onLangChange.pipe(
+      map((event: LangChangeEvent) => event.lang),
+      startWith(userLang)
+    ).subscribe((language) => {
+      mapConfigSubject.next({
+        apikey: '33d8a0b6-7058-4ce7-b658-43533ce76ec0',
+        lang: language === Lang.RU ? 'ru_RU' : 'en_US',
+      });
+    });
   }
 }

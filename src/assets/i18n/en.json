@@ -1,6 +1,8 @@
 {
+  "TITLE": "Lounge Bar Solution Heritage",
   "CONTACTS": {
-    "WHATSAPP_HELLO_TEXT": "Hi, I want to book a table!"
+    "WHATSAPP_HELLO_TEXT": "Hi, I want to book a table!",
+    "ADDRESS": "12 Giorgi Akhvlediani St, Tbilisi"
   },
   "BUTTON": {
     "RESERVE": "Reserve",

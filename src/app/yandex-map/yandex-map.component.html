@@ -1,0 +1,16 @@
+<div class="container address-container" *ngIf="{ title: 'TITLE' | translate, address: 'CONTACTS.ADDRESS' | translate } as sync">
+  <img src="assets/icons/geo.svg" alt="geolocation" />
+  <span class="title">{{ sync.title }}</span>
+  <div class="address">
+    <button (click)="copyAddress(sync.title + ', ' + sync.address)" class="copy-btn" title="Copy address">
+      <img src="assets/icons/copy.svg" alt="copy"/>
+    </button>
+    <span>{{ sync.address }}</span>
+  </div>
+</div>
+
+<div class="container map-container">
+  <ya-map [center]="[41.705928, 44.789687]" [zoom]="16" [state]="state" [options]="options" (ready)="onMapReady($event)">
+    <ya-placemark [geometry]="[41.705928, 44.789687]"></ya-placemark>
+  </ya-map>
+</div>
