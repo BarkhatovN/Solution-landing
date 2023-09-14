@@ -21,7 +21,7 @@
       <div class="control-error" [class.show]="form.controls.phone.invalid && form.controls.phone.touched">{{ ( form.controls.phone.hasError('required') ? 'ERRORS.REQUIRED' : 'ERRORS.PHONE' ) | translate }}</div>
     </div>
 
-    <button type="button" class="solution-btn" [disabled]="form.invalid || sync.loading" (click)="submit()">{{ 'BOOKING.BUTTON' | translate }}</button>
+    <button type="button" class="solution-btn" aria-label="Lounge Bar Solution Heritage забронировать столик" [disabled]="form.invalid || sync.loading" (click)="submit()">{{ 'BOOKING.BUTTON' | translate }}</button>
   </form>
 </ng-container>
 

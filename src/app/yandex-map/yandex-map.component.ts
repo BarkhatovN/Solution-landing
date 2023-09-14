@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { YaReadyEvent } from 'angular8-yandex-maps';
 
+enum UserAgent {
+  DESKTOP,
+  IOS,
+  ANDROID
+}
+
 @Component({
   selector: 'solution-yandex-map',
   templateUrl: './yandex-map.component.html',
@@ -9,7 +15,11 @@ import { YaReadyEvent } from 'angular8-yandex-maps';
 })
 export class YandexMapComponent {
 
-  constructor(private readonly clipboard: Clipboard) {}
+  userAgent: UserAgent = this.getMobileOperatingSystem();
+
+  readonly UserAgent = UserAgent;
+
+  constructor(private readonly clipboard: Clipboard) { }
 
   state: ymaps.IMapState = {
     controls: []
@@ -24,15 +34,29 @@ export class YandexMapComponent {
   };
 
   onMapReady(event: YaReadyEvent<ymaps.Map>) {
-    // event.target.behaviors.disable('scrollZoom');
-    // event.target.behaviors.disable('drag');
-    // event.target.behaviors.disable('dblClickZoom');
-    // event.target.behaviors.disable('multiTouch');
-    // event.target.behaviors.disable('rightMouseButtonMagnifier');
-    // event.target.behaviors.disable('leftMouseButtonMagnifier');
+    event.target.behaviors.disable('scrollZoom');
+    event.target.behaviors.disable('drag');
+    event.target.behaviors.disable('dblClickZoom');
+    event.target.behaviors.disable('multiTouch');
+    event.target.behaviors.disable('rightMouseButtonMagnifier');
+    event.target.behaviors.disable('leftMouseButtonMagnifier');
   }
 
-  copyAddress(str: string) {
-    this.clipboard.copy(str)
+  private getMobileOperatingSystem(): UserAgent {
+    var userAgent = navigator.userAgent;
+
+    if (!userAgent) {
+      return UserAgent.DESKTOP;
+    }
+
+    if (/android/i.test(userAgent)) {
+      return UserAgent.ANDROID;
+    }
+
+    if (/iPad|iPhone|iPod/.test(userAgent)) {
+      return UserAgent.IOS;
+    }
+
+    return UserAgent.DESKTOP;
   }
 }
