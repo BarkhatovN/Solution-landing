@@ -24,12 +24,12 @@ export class YandexMapComponent {
   };
 
   onMapReady(event: YaReadyEvent<ymaps.Map>) {
-    // event.target.behaviors.disable('scrollZoom');
-    // event.target.behaviors.disable('drag');
-    // event.target.behaviors.disable('dblClickZoom');
-    // event.target.behaviors.disable('multiTouch');
-    // event.target.behaviors.disable('rightMouseButtonMagnifier');
-    // event.target.behaviors.disable('leftMouseButtonMagnifier');
+    event.target.behaviors.disable('scrollZoom');
+    event.target.behaviors.disable('drag');
+    event.target.behaviors.disable('dblClickZoom');
+    event.target.behaviors.disable('multiTouch');
+    event.target.behaviors.disable('rightMouseButtonMagnifier');
+    event.target.behaviors.disable('leftMouseButtonMagnifier');
   }
 
   copyAddress(str: string) {
