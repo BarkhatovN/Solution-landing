@@ -1,3 +1,3 @@
 docker build -t solution-landing .
 docker rm solution-landing -f
-docker run --name solution-landing -d -p 80:80 solution-landing --restart always
+docker run --name solution-landing -d -p 80:80 solution-landing 
