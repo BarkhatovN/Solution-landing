@@ -1,16 +1,34 @@
-<div class="container address-container" *ngIf="{ title: 'TITLE' | translate, address: 'CONTACTS.ADDRESS' | translate } as sync">
-  <img src="assets/icons/geo.svg" alt="Тбилиси, улица Георгия Ахвледиани, 12, этаж 2" />
-  <span class="title">{{ sync.title }}</span>
-  <div class="address">
-    <button (click)="copyAddress(sync.title + ', ' + sync.address)" class="copy-btn" title="Copy address" aria-label="copy 12 Giorgi Akhvlediani St, Tbilisi">
-      <img src="assets/icons/copy.svg" alt="copy"/>
-    </button>
-    <span>{{ sync.address }}</span>
-  </div>
+<div class="container address-container"
+  *ngIf="{ title: 'TITLE' | translate, address: 'CONTACTS.ADDRESS' | translate } as sync">
+  <a *ngIf="userAgent === UserAgent.DESKTOP; else tmplMobileLink" target="_blank"
+    href="http://maps.google.com/maps?daddr=41.705898188141525,44.789675471396116&z=17" class="link">
+    <img src="assets/icons/geo.svg" alt="Тбилиси, улица Георгия Ахвледиани, 12, этаж 2" />
+    <span class="title">{{ sync.title }}</span>
+    <span class="address">{{ sync.address }}</span>
+  </a>
+
+  <ng-template #tmplMobileLink>
+    <a [href]="
+        userAgent === UserAgent.IOS ?
+        'comgooglemaps://?daddr=Tbilisi,+Lounge+Bar+Solution+Heritage&center=41.705898188141525,44.789675471396116&zoom=17'
+        : 'geo:41.705898188141525,44.789675471396116'
+      " class="link">
+      <img src="assets/icons/geo.svg" alt="Тбилиси, улица Георгия Ахвледиани, 12, этаж 2" />
+      <span class="title">{{ sync.title }}</span>
+      <span class="address">{{ sync.address }}</span>
+    </a>
+  </ng-template>
 </div>
 
-<div class="container map-container">
-  <ya-map [center]="[41.705928, 44.789687]" [zoom]="17" [state]="state" [options]="options" (ready)="onMapReady($event)">
+<a class="container map-container" target="_blank"
+  [href]="
+    userAgent === UserAgent.IOS ?
+    'comgooglemaps://?daddr=Tbilisi,+Lounge+Bar+Solution+Heritage&center=41.705898188141525,44.789675471396116&zoom=17'
+    : userAgent === UserAgent.DESKTOP ? 'http://maps.google.com/maps?daddr=41.705898188141525,44.789675471396116&z=17'
+    : 'geo:41.705898188141525,44.789675471396116'
+  ">
+  <ya-map [center]="[41.705928, 44.789687]" [zoom]="17" [state]="state" [options]="options"
+    (ready)="onMapReady($event)">
     <ya-placemark [geometry]="[41.705928, 44.789687]"></ya-placemark>
   </ya-map>
-</div>
+</a>
