@@ -75,8 +75,8 @@ export class AppModule {
     const userLang = storedLang
       ? storedLang
       : navigator.language === 'ru-RU'
-      ? Lang.RU
-      : Lang.EN;
+        ? Lang.RU
+        : Lang.EN;
 
     translate.use(userLang);
 
@@ -87,7 +87,7 @@ export class AppModule {
       startWith(userLang)
     ).subscribe((language) => {
       mapConfigSubject.next({
-        apikey: '33d8a0b6-7058-4ce7-b658-43533ce76ec0',
+        apikey: '40f50f8c-0c37-45f5-80f4-8334b66b8807',
         lang: language === Lang.RU ? 'ru_RU' : 'en_US',
       });
     });
