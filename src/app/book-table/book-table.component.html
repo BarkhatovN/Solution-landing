@@ -17,7 +17,7 @@
 
     <div class="form-field">
       <label for="phone">{{ 'BOOKING.PHONE' | translate }}</label>
-      <input id="phone" type="text" formControlName="phone" prefix="+995" mask=" 000-000-000" placeholder="+995 999 999 999">
+      <input id="phone" type="tel" formControlName="phone" prefix="+995" mask=" 000-000-000" placeholder="+995 999 999 999">
       <div class="control-error" [class.show]="form.controls.phone.invalid && form.controls.phone.touched">{{ ( form.controls.phone.hasError('required') ? 'ERRORS.REQUIRED' : 'ERRORS.PHONE' ) | translate }}</div>
     </div>
 
