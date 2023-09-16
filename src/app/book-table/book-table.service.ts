@@ -5,9 +5,9 @@ import { ReserveData } from "./book-table.component";
 
 @Injectable({ providedIn: 'root' })
 export class BookTableService {
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient) { }
 
   sendReserveTableRequest(data: ReserveData): Observable<void> {
-    return this.http.post<void>('https://some-api-here.net/reserve-table', data);
+    return this.http.post<void>('/send', { text: 'Заявка на связаться с гостем с сайта: имя:' + data.name + ' телефон:' + data.phone });
   }
 }
