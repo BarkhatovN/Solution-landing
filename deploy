@@ -1,3 +1,3 @@
 docker build -t solution-landing .
 docker rm solution-landing -f
-docker run --net net --name solution-landing -d -p 80:80 solution-landing 
+docker run --net net --name solution-landing -d -p 80:80 -p 443:443 solution-landing
