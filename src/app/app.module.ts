@@ -86,6 +86,8 @@ export class AppModule {
       map((event: LangChangeEvent) => event.lang),
       startWith(userLang)
     ).subscribe((language) => {
+      document.querySelector('html')?.setAttribute('lang', language);
+
       mapConfigSubject.next({
         apikey: '40f50f8c-0c37-45f5-80f4-8334b66b8807',
         lang: language === Lang.RU ? 'ru_RU' : 'en_US',

@@ -9,6 +9,12 @@
   overflow: hidden;
 }
 
+h1 {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
 .title-smoke-img {
   position: absolute;
   width: 100%;
