@@ -13,12 +13,14 @@
     "DESCRIPTION": "Our team specializes in hookah making, so with us you can try the best hookah of your life. Fruity, berry, dessert, culinary, natural and many other tobacco flavors and even ones that you'll fantasize about. We train our own hookah masters and are responsible for the quality of each hookah. A place with an interior in the spirit of old empire apartments. Large upholstered sofas and armchairs, marble tables, heavy chandeliers and a contact bar"
   },
   "COCTAILS": {
-    "TITLE": "COCTAILS"
+    "TITLE": "COCKTAILS"
   },
   "HOOKAHS": {
     "TITLE": "HOOKAHS",
     "ITEM1": "Standard hookah",
-    "ITEM2": "Grapefruit/orange hookah"
+    "ITEM2": "Coldrex hookah",
+    "ITEM3": "Welcome hookah",
+    "ITEM4": "Weekday hookah (till 17:30)"
   },
   "MENU": {
     "TITLE": "MENU"

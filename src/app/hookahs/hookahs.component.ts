@@ -14,12 +14,20 @@ interface PricelistItem {
 export class HookahsComponent {
   hookahs: PricelistItem[] = [
     {
+      name: 'HOOKAHS.ITEM3',
+      price: '40 gel',
+    },
+    {
+      name: 'HOOKAHS.ITEM4',
+      price: '50 gel',
+    },
+    {
       name: 'HOOKAHS.ITEM1',
       price: '60 gel',
     },
     {
       name: 'HOOKAHS.ITEM2',
-      price: '70 gel',
+      price: '60 gel',
     },
   ];
 }

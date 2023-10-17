@@ -1,15 +1,7 @@
-<swiper-container
-  *ngIf="imageUrls.length"
-  #swiper
-  [breakpoints]="breakpoints"
-  init="false"
-  speed="500"
-  loop="true"
-  css-mode="true"
->
+<swiper-container *ngIf="imageUrls.length" #swiper [breakpoints]="breakpoints" init="false" speed="500" loop="true"
+  css-mode="true">
   <swiper-slide *ngFor="let url of imageUrls; index as i" lazy="true">
-    <img [src]="url" [alt]="'SOLUTION image ' + i" class="title-text-img" loading="lazy"
-  /></swiper-slide>
+    <img [src]="url" [alt]="'SOLUTION image ' + i" class="title-text-img" loading="lazy" /></swiper-slide>
 </swiper-container>
 
 <button class="control-btn next" (click)="next()">

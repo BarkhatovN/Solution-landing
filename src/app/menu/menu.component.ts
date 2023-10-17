@@ -9,18 +9,22 @@ import { SwiperOptions } from 'swiper/types';
 })
 export class MenuComponent {
   imageUrls: string[] = [
-    'assets/images/menu/menu1.webp',
-    'assets/images/menu/menu2.webp',
-    'assets/images/menu/menu3.webp',
-    'assets/images/menu/menu4.webp',
+    'assets/images/menu/Instagram story - 3.webp',
+    'assets/images/menu/Instagram story - 4.webp',
+    'assets/images/menu/Instagram story - 5.webp',
+    'assets/images/menu/Instagram story - 6.webp',
+    'assets/images/menu/Instagram story - 7.webp',
+    'assets/images/menu/Instagram story - 8.webp',
+    'assets/images/menu/Instagram story - 9.webp',
+    'assets/images/menu/Instagram story - 10.webp',
   ];
 
   breakpoints: {
     [width: number]: SwiperOptions;
     [ratio: string]: SwiperOptions;
   } = {
-    0: { slidesPerView: 1 },
-    900: { slidesPerView: 2 },
-    1200: { slidesPerView: 3 },
-  };
+      0: { slidesPerView: 1 },
+      900: { slidesPerView: 2 },
+      1200: { slidesPerView: 3 },
+    };
 }
